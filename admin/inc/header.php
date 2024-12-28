@@ -21,7 +21,13 @@
                 <a class="nav-link text-white" href="users.php">Users</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link text-white" href="properties.php">properties</a>
+                <a class="nav-link text-white" href="agency.php">Agencies</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link text-white" href="properties.php">Properties</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link text-white" href="queries.php">Queries</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link text-white" href="settings.php">settings</a>
