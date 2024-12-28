@@ -1,0 +1,54 @@
+.custom-alert{
+    position:fixed;
+    top: 80px;
+    right :25px;
+}
+ 
+#dashboard-menu{
+    position: fixed;
+    height: 100%;
+}
+@media screen  and (max-width:992px) {
+    #dashboard-menu{
+        height: auto;
+        width: 100%;
+    }
+
+    #main-content{
+        margin-top: 60px;
+    }
+}
+.bg-custom{
+    background-color: #D13222;
+    
+}
+:root {
+    --custom-color: #D13222;
+}
+
+.bg-custom {
+    background-color: var(--custom-color) !important;
+}
+
+.text-custom {
+    color: var(--custom-color) !important;
+}
+
+.btn-outline-custom {
+    color: #D13222; 
+    border-color: #D13222; 
+}
+
+.btn-outline-custom:hover {
+    background-color: #D13222; 
+    color: #fff; 
+}
+
+/* Change background color of table headers */
+.table thead {
+    background-color: #D13222; /* Your custom color for the table header background */
+    color: white; /* Make text white */
+}
+
+
+
