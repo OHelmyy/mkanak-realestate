@@ -31,9 +31,9 @@ adminLogin();
                             <thead >
                                 <tr >
                                     
-                                    <th scope="col">Property ID</th>
+                                    <th scope="col">#</th>
                                     
-                                    <th scope="col">Agent Id</th>
+                                    <th scope="col">Property Id</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Type</th>
                                     <th scope="col">Price</th>
