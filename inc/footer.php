@@ -1,10 +1,30 @@
+<?php
+require 'inc/db_config.php'; // Include database configuration
+
+// Fetch 'website_title' and 'website_about' content from the settings table
+$settings_query = "SELECT website_title FROM settings LIMIT 1";
+$result = $con->query($settings_query);
+
+$website_title = "Default Title"; // Fallback default
+
+
+if ($result && $result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $website_title = $row['website_title']; // Assign the website_title to a variable
+
+}
+?>
+
+
 <div class="bg-dark text-white pt-5">
   <div class="container-fluid">
     <div class="row">
 
     <!-- Social Media Links -->
     <div class="col-lg-3 col-md-6 mb-4">
-        <h3 class="fw-bold fs-4 mb-3">MKANAK</h3>
+    <h3 class="fw-bold fs-4 mb-3">
+    <?php echo htmlspecialchars($website_title); ?>
+</h3>
         <div>
           <a href="#" class="d-inline-block me-2 text-black">
             <i class="bi bi-facebook" style="font-size: 24px; color: black;"></i>

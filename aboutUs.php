@@ -1,3 +1,19 @@
+<?php
+require 'inc/db_config.php'; // Include database configuration
+
+// Fetch 'website_about' content from the settings table
+$website_about_query = "SELECT website_about FROM settings LIMIT 1";
+$result = $con->query($website_about_query);
+
+$website_about = "";
+if ($result && $result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $website_about = $row['website_about']; // Assign the content to a variable
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +66,7 @@
         <div class="col-lg-6 col-md-5 mb-4">
             <h3 class="mb-3 header-highlight">Our Mission</h3>
             <p>
-                At MKANAK, we aim to redefine the property experience by offering homes that blend affordability with quality. Whether you are looking to rent or purchase, we ensure that every property meets the highest standards.
+                <?php echo htmlspecialchars($website_about); ?>
             </p>
         </div>
         <div class="col-lg-5 col-md-5 mb-4">
@@ -58,6 +74,7 @@
         </div>
     </div>
 </section>
+
 
 <!-- Highlights Section -->
 <section class="container mt-5">
