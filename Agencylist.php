@@ -1,62 +1,71 @@
 <?php
-include 'inc/db_config.php';
+require('inc/db_config.php');
 
 if (!$con) {
     die("Failed to connect to the database!");
 }
 
-$sql = "SELECT * FROM property";
-$result = $con->query($sql);
+
+
 ?>
 
 
-    <head>   
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Agencylist.css">   
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+    <title>Agency Listing Page</title>
+    <?php require('inc/links.php'); ?>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/Agencylist.css">
+</head>
+<body class="bg-light">
+
+
 
     <body> 
         <header>
-            <h1 class="logo">Mkanak</h1>
-            <div class="search-bar">
-                <input type="text" placeholder="What you looking for?" />
-                <button><img src="Photos/search.png" alt="Search" class="search-icon"></button>
-            </div>
-            <button class="menu-icon">☰</button>
+        <?php require('inc/header.php'); ?>
         </header>
-        <img src="Photos/Agencylist.jpg" alt="Buildings" class="Agencylistphoto">
-        <section class="property-section">
-        <div class="sidebar">
-            <h3>PROPERTY TYPE</h3>
-            <ul>
-                <li><input type="checkbox"> Villa</li>
-                <li><input type="checkbox"> Apartment</li>
-                <li><input type="checkbox"> Townhouse</li>
-                <li><input type="checkbox"> Penthouse</li>
-            </ul>
+        <main class="main-container">
+        
+        <div class="left-section">
+            <div class="text-overlay">
+                <h1>Fill Our Website</h1>
+                <p>With Your Amazing Properties</p>
+                
+            </div>
         </div>
-        <div class="main-content">
-            <h2>Pick Your Property</h2>
-                <div class="property-grid">
-                <?php
-                if ($result && $result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo '<div class="property-card">';
-                        echo '<img src="Photos/Agencylistphoto.jpg" alt="Property Image">';
-                        echo '<div class="property-details">';
-                        echo '<h3>' . htmlspecialchars($row['title']) . '</h3>';
-                        echo '<p>' . $row['bedroom'] . ' beds, ' . $row['bathroom'] . ' baths</p>';
-                        echo '<p><span class="location-icon">📍</span> ' . htmlspecialchars($row['location']) . '</p>';
-                        echo '</div>';
-                        echo '</div>';
-                    }
-                } else {
-                    echo "<p>No properties found!</p>";
-                }
-                ?>
-                </div>
+
+        
+        <div class="right-section">
+            <h2>List Your Property</h2>
+            <p>Fill out the details for information</p>
+            <form action="add_property.php" method="post" enctype="multipart/form-data">
+                <input type="text" name="price" placeholder="Price" required>
+                <textarea name="description" placeholder="Description" rows="4" required></textarea>
+                <input type="text" name="location" placeholder="Location" required>
+
+    
+            <select name="type" required>
+                    <option value="">Select Type</option>
+                    <option value="Villa">Villa</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="Townhouse">Townhouse</option>
+                    <option value="Penthouse">Penthouse</option>
+            </select>
+
+            <input type="number" name="bedroom" placeholder="Bedrooms" min="1" required>
+            <input type="number" name="bathroom" placeholder="Bathrooms" min="1" required>
+            <input type="number" name="area" placeholder="Area (sqm)" min="1" required>
+
+            <input type="file" name="photos">
+    
+            <button type="submit" name="submit" class="submit-btn">Add Property</button>
+            </form>
+
         </div>
-    </section>
+    </main>
+        
     </body>
