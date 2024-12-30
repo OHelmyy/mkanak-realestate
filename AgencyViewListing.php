@@ -24,7 +24,9 @@ $result = $con->query($sql);
 </header>
 <body>
 <div class="table-container">
-    <table>
+<?php
+if ($result->num_rows > 0) {
+    echo"<table>
         <tr>
             <th>PropertyID</th>
             <th>Price</th>
@@ -35,22 +37,32 @@ $result = $con->query($sql);
             <th>Bathrooms</th>
             <th>Area</th>
             <th>Action</th>
-        </tr>
-        <?php
+        </tr>";
+        
         if($result->num_rows>0){
             while($row = $result->fetch_assoc()){
-                echo "<tr><td>".$row["pr_id"]."</td><td>".$row["price"]."</td><td>".$row["description"]."</td><td>".$row["location"]."</td><td>".$row["type"]."</td><td>".$row["bedroom"]."</td><td>".$row["bathroom"]."</td><td>".$row["area"]."</td><td> <button class='edit-btn'>Edit</button>
-                                <button class='delete-btn'>Delete</button></td></tr>";
+                echo "<tr><td>".$row["pr_id"]."</td><td>".$row["price"]."</td><td>".$row["description"]."</td><td>".$row["location"]."</td><td>".$row["type"]."</td><td>".$row["bedroom"]."</td><td>".$row["bathroom"]."</td><td>".$row["area"]."</td><td> 
+                        <form style='display:inline;' method='POST' action='edit_property.php'>
+                        <input type='hidden' name='edit' value='" . $row["pr_id"] . "'>
+                        <button type='submit' class='edit-btn' onclick='openModal((".$row["pr_id"]."))'>Edit</button>
+                        </form>
+                        <form style='display:inline;' method='POST' action='delete_property.php'>
+                        <input type='hidden' name='delete' value='" . $row["pr_id"] . "'>
+                        <button type='submit' class='delete-btn '>Delete</button>
+                        </form>
+                    </td></tr>";
                 
             }
             echo "</table>";
-        }else{
-            echo"There is no properties!";
-        }
+
 
         
-        ?>
-    </table>
+        
+    echo"</table>";
+}}else{
+    echo"<p>There is no listed properties!</p>";
+}
+?>
 </div>
 </body>
 

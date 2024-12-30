@@ -1,0 +1,94 @@
+
+
+header{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    position: relative;     
+    width: 100%;
+}
+
+header img{
+    position: absolute;
+    left: 10px;  
+    top: 50%;    
+    transform: translateY(-50%); 
+    width: 35px;  
+    height: auto;
+    
+    
+}
+
+h1{
+    font-size: 24px;  
+    text-align: center;
+
+    
+}
+
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+form label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+
+form input[type="text"],
+form input[type="number"],
+form textarea,
+form select,
+form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form textarea:focus,
+form select:focus,
+form input[type="file"]:focus {
+    border-color: #D13222;
+    outline: none;
+}
+
+
+form button[type="submit"] {
+    background-color: #D13222;
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+
+form button[type="submit"]:hover {
+    background-color: #5e140d;
+}
+
+form textarea {
+    height: 150px;
+    resize: vertical;
+}
