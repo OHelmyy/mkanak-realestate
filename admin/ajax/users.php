@@ -18,7 +18,8 @@ if (isset($_POST['get_all_users'])) {
     
     while ($row = mysqli_fetch_assoc($res)) {
         // Set the status based on the property status
-        
+        $delete ="<button onclick='delete_user($row[user_id])' class='btn btn-dark btn-sm shadow-none' >delete</button>";
+
 
 
 
@@ -30,7 +31,7 @@ if (isset($_POST['get_all_users'])) {
                 <td>' . $row['name'] . '</td>
                 <td>' . $row['email'] . '</td>
                 <td>' . $row['phone'] . '</td>
-                
+                <td>' . $delete . '</td>
             
             </tr>
         ';

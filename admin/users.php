@@ -85,10 +85,10 @@ function delete_user(userId) {
 
     xhr.onload = function () {
         if (this.responseText == 1) {
-            alert("User deleted successfully!");
+            alert('success',"User deleted successfully!");
             refreshUserList(); // Refresh the user list
         } else {
-            alert("Failed to delete the user!");
+            alert("error","Failed to delete the user!");
         }
     };
 

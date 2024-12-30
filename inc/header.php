@@ -13,7 +13,7 @@
                     <a class="nav-link active me-3" href="index.php" style="color: white; transition: color 0.3s;" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-3" href="#" style="color: white; transition: color 0.3s;" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">Properties</a>
+                    <a class="nav-link me-3" href="find.php" style="color: white; transition: color 0.3s;" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">Properties</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link me-3" href="#" style="color: white; transition: color 0.3s;" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">Find Agency</a>
