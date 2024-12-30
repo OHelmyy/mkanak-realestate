@@ -18,7 +18,7 @@ if (isset($_POST['get_all_property'])) {
 
     while ($row = mysqli_fetch_assoc($res)) {
         // Set the status based on the property status
-        if( $row['status'] == 0){
+        if( $row['status'] == 1){
             $status =" <button onclick='toggle_status($row[pr_id],0)' class='btn btn-dark btn-sm shadow-none' >hide</button>"; 
         }else{
             $status ="<button onclick='toggle_status($row[pr_id],1)' class='btn btn-danger btn-sm shadow-none' >post</button>";

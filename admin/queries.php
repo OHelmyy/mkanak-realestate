@@ -43,7 +43,7 @@ if(isset($_GET['del'])){
             <h3 class="mb-4 mt-4">QUERIES </h3>
             <div class="card border-0 shadow-sm mb-4">
                 <div class="card-body">
-                <div class="table-responsive-lg " style="height: 450px;, overflow-y :scroll;">
+                <div class="table-responsive-lg " style="height: 450px; overflow-y :scroll;">
                         <table class=" table table-hover border">
                             <thead class="sticky-top">
                                 <tr >
@@ -74,7 +74,7 @@ if(isset($_GET['del'])){
                                     echo "<td>".$row['name']."</td>";
                                     echo "<td>".$row['message']."</td>";
                                     echo "<td>".$row['email']."</td>";
-                                    echo "<td>".$row['phone']."</td>";
+                                    echo "<td>".$row['Phone']."</td>";
                                     echo "<td>".$delete."</td>";
                                     echo "</tr>";
                                     $i++;

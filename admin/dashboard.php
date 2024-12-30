@@ -19,22 +19,25 @@ adminLogin();
 
 <?php 
 $current_users= mysqli_fetch_assoc(
-    mysqli_query($con, "SELECT COUNT(user_id) as total FROM users")
+    mysqli_query($con, "SELECT COUNT(id) as total FROM user_cred")
 );
 
 
 $current_properties= mysqli_fetch_assoc(
     mysqli_query($con, "SELECT 
     COUNT(pr_id) as `total` ,
-    COUNT(CASE WHEN `status` = '0' THEN 1 END) AS `approved`,
-    COUNT(CASE WHEN `status` = '1' THEN 1 END) AS `pending`
+    COUNT(CASE WHEN `status` = '1' THEN 1 END) AS `approved`,
+    COUNT(CASE WHEN `status` = '0' THEN 1 END) AS `rejected`,
+    COUNT(CASE WHEN `status` IS NULL THEN 1 END) AS `pending`
     FROM property")
 );
 
 $current_agencies= mysqli_fetch_assoc(
     mysqli_query($con, "SELECT COUNT(ag_id) as total FROM agency")
 );
-
+$current_q= mysqli_fetch_assoc(
+    mysqli_query($con, "SELECT COUNT(id) as total FROM contact_us")
+)
 
 ?>
 
@@ -78,7 +81,7 @@ $current_agencies= mysqli_fetch_assoc(
                     <a href="UserQ.php" class="text-decoration-none">
                         <div class="card text-center text-info p-3">
                             <h6>User Queries</h6>
-                            <h1 class="mt-2 mb-0">///</h1>
+                            <h1 class="mt-2 mb-0"><?php echo $current_q['total']?></h1>
                         </div>
                     </a>
                 </div>
@@ -109,13 +112,13 @@ $current_agencies= mysqli_fetch_assoc(
                     <a href="properties.php" class="text-decoration-none">
                         <div class="card text-center text-danger p-3">
                             <h6>Rejected Properties</h6>
-                            <h1 class="mt-2 mb-0">///</h1>
+                            <h1 class="mt-2 mb-0"><?php echo $current_properties['rejected']?></h1>
                         </div>
                     </a>
             </div>
             </div>
 
-            <div class="d-flex justify-content-between align-items-center mb-4">
+            <!-- <div class="d-flex justify-content-between align-items-center mb-4">
                 <h3 >User Analytics</h3>
             </div>
 
@@ -136,9 +139,9 @@ $current_agencies= mysqli_fetch_assoc(
                         </div>
                     </a>
             </div>
-            </div>
+            </div> -->
 
-            <div class="d-flex justify-content-between align-items-center mb-4">
+            <!-- <div class="d-flex justify-content-between align-items-center mb-4">
                 <h3 >Agency Analytics</h3>
             </div>
 
@@ -159,7 +162,7 @@ $current_agencies= mysqli_fetch_assoc(
                         </div>
                     </a>
             </div>
-            </div>
+            </div> -->
 
 
         </div>

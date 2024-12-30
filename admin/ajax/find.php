@@ -39,7 +39,7 @@ if (isset($_POST['selectedTypes'])) {
         $stmt->execute();
         $result = $stmt->get_result();
     } else {
-        $query = "SELECT * FROM property";
+        $query = "SELECT * FROM property where `status` = '1'";
         $result = mysqli_query($con, $query);
     }
 
