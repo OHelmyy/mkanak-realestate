@@ -26,7 +26,7 @@
                         onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">Find Agency</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-3" href="contactUs.php" style="color: white; transition: color 0.3s;"
+                    <a class="nav-link me-3" href="contact.php" style="color: white; transition: color 0.3s;"
                         onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">Contact Us</a>
                 </li>
 

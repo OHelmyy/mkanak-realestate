@@ -19,8 +19,8 @@
       <div class="col-lg-3 col-md-6 mb-4">
         <h5 class="fw-bold mb-3">LEGAL</h5>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-white text-decoration-none">Terms Of Service</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+          <li><a href="policy.php" class="text-white text-decoration-none">Terms Of Service</a></li>
+          <li><a href="policy.php" class="text-white text-decoration-none">Privacy Policy</a></li>
         </ul>
       </div>
 
