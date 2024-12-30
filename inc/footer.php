@@ -186,6 +186,94 @@ xhr.send(data);
 });
 
 
+
+let agency_form=document.getElementById('agency-form');
+agency_form.addEventListener('submit',(e)=>{
+
+e.preventDefault();
+let data=new FormData();
+data.append('name',agency_form.elements['name'].value);
+data.append('email',agency_form.elements['email'].value);
+data.append('location',agency_form.elements['location'].value);
+data.append('phonenum',agency_form.elements['phonenum'].value);
+data.append('pass',agency_form.elements['pass'].value);
+data.append('cpass',agency_form.elements['cpass'].value);
+data.append('agencyregister','');
+
+var myModal=document.getElementById('AgencyregsiterModal');
+var modal=bootstrap.Modal.getInstance(myModal);
+modal.hide();
+
+let xhr=new XMLHttpRequest();
+xhr.open("POST","ajax/agency_register.php",true);
+
+xhr.onload=function(){
+  console.log(this.responseText); // Debugging to check response
+
+  if(this.responseText=='pass_mismatch'){
+    alert('error',"PASSWORD MISMATCH");
+  }
+    else if(this.responseText=='email_already'){
+      alert('error',"Email is already registered!");
+    }
+    else if(this.responseText=='phone_already'){
+      alert('error',"phone is already registered!");
+    }
+    else if(this.responseText=='ins_failed'){
+      alert('error',"registration failed");
+    }
+    else{
+      alert('success',"REGISTRATION SUCCESSFUL");
+      agency_form.reset();
+      modal.hide();
+    }
+  }
+
+xhr.send(data);
+
+
+});
+
+
+let agencylogin_form = document.getElementById('agencylogin-form');
+login_form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let data = new FormData();
+    data.append('email', agencylogin_form.elements['email'].value);
+    data.append('pass', agencylogin_form.elements['pass'].value);
+    data.append('agencylogin', '');
+
+    var myModal = document.getElementById('agencyloginModal');
+    var modal = bootstrap.Modal.getInstance(myModal);
+    modal.hide();
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "ajax/agency_register.php", true);
+
+xhr.onload = function () {
+    console.log(this.responseText);  // Log the response for debugging
+    if (this.responseText == 'inv_email') {
+        alert('error', "Invalid email");
+    }
+    else if (this.responseText == 'inv_pass') {
+        alert('error', "Incorrect password");
+    } 
+    else if (this.responseText == 'login_success') {
+            // Redirect to index.php after successful login
+            window.location.href = 'index.php';  // Redirect to index.php
+        } 
+        else {
+            alert('An unexpected error occurred.');
+        }
+    };
+
+
+
+xhr.send(data);
+
+
+});
+
   </script>
 
   
