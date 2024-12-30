@@ -6,6 +6,7 @@
     <title>MKANAK</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <?php require('inc/links.php')?>
+    <link rel="stylesheet" href="common.css">
 
 <style>
 
@@ -48,13 +49,17 @@
     <div class="swiper swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="images/carousel/download (4).jpeg" class="w-100 d-block carousel-img">
+                <img src="images/carousel/IMG_40905.png" class="w-100 d-block carousel-img">
             </div>
             <div class="swiper-slide">
-                <img src="images/carousel/download (4).jpeg" class="w-100 d-block carousel-img">
+                <img src="images/carousel/IMG_62045.png" class="w-100 d-block carousel-img">
             </div>
             <div class="swiper-slide">
-                <img src="images/carousel/download (5).jpeg" class="w-100 d-block carousel-img">
+                <img src="images/carousel/IMG_55677.png class="w-100 d-block carousel-img">
+            </div> <div class="swiper-slide">
+                <img src="images/carousel/IMG_93127.png class="w-100 d-block carousel-img">
+            </div> <div class="swiper-slide">
+                <img src="images/carousel/IMG_99736.png class="w-100 d-block carousel-img">
             </div>
         </div>
     </div>
@@ -143,7 +148,6 @@
    
 
 
-<!-- Property Section -->
 <!-- Property Section -->
 <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">Our Property</h2>
 <div class="container">

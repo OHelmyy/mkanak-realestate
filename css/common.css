@@ -8,10 +8,6 @@
             -webkit-appearance: none;
             margin: 0;
         }
-        /*firefox*/
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
         .custom-bg {
             background-color: var(--teal);
             border: 1px solid var(--teal);

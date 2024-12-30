@@ -1,15 +1,15 @@
 <?php
-require 'inc/db_config.php'; // Include database configuration
+// require 'inc/db_config.php'; // Include database configuration
 
-// Fetch 'website_about' content from the settings table
-$website_about_query = "SELECT website_about FROM settings LIMIT 1";
-$result = $con->query($website_about_query);
+// // Fetch 'website_about' content from the settings table
+// $website_about_query = "SELECT website_about FROM settings LIMIT 1";
+// $result = $con->query($website_about_query);
 
-$website_about = "";
-if ($result && $result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $website_about = $row['website_about']; // Assign the content to a variable
-}
+// $website_about = "";
+// if ($result && $result->num_rows > 0) {
+//     $row = $result->fetch_assoc();
+//     $website_about = $row['website_about']; // Assign the content to a variable
+// }
 ?>
 
 

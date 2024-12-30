@@ -14,8 +14,8 @@ function filtration($data) {
     foreach ($data as $key => $val) {
         if (is_string($val)) {
             $data[$key] = trim($val);
-            $data[$key] = htmlspecialchars($data[$key], ENT_QUOTES, 'UTF-8');
             $data[$key] = stripslashes($data[$key]);
+            $data[$key] = htmlspecialchars($data[$key], ENT_QUOTES, 'UTF-8');
             $data[$key] = strip_tags($data[$key]);
         }
     }
@@ -60,6 +60,26 @@ function update($sql,$values,$datatypes){
     }
     else{
         die('prepare failed -update');
+    }
+}
+
+
+function insert($sql, $values, $datatypes)
+{
+    $con = $GLOBALS['con'];
+
+    if ($stmt = mysqli_prepare($con, $sql)) {
+        mysqli_stmt_bind_param($stmt, $datatypes, ...$values);
+        if (mysqli_stmt_execute($stmt)) {
+            $insert_id = mysqli_insert_id($con); // Get the last inserted ID
+            mysqli_stmt_close($stmt);
+            return $insert_id;
+        } else {
+            mysqli_stmt_close($stmt);
+            die("Query cannot be executed - INSERT");
+        }
+    } else {
+        die("Prepare failed - INSERT");
     }
 }
 
