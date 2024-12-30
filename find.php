@@ -151,7 +151,7 @@ require 'inc/db_config.php';
 
             <div class="col-lg-8 col-md-4 property-section">
                 <div id="property-cards">
-                    <!-- Cards will be dynamically inserted here -->
+                    
                 </div>
             </div>
 
@@ -161,6 +161,10 @@ require 'inc/db_config.php';
     </div>
 
     </div>
+
+    <?php
+    require 'inc/footer.php';
+    ?>
 
 
 

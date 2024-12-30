@@ -89,116 +89,17 @@
             letter-spacing: 1px;
         }
 
-        .location-box {
-            background-color: white;
-            color: black;
-            border-radius: 20px;
-            padding: 8px 20px;
-            font-size: 0.95rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .search-box {
-            border-radius: 20px;
-            height: 40px;
-            width: 300px;
-            font-size: 0.9rem;
-            padding: 0 15px;
-            border: 1px solid #D13222;
-        }
-
-        .search-box:focus {
-            border-color: #D13222;
-            box-shadow: 0 0 5px rgba(209, 50, 34, 0.5);
-        }
-
-        .menu-popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            right: 0;
-            height: 100%;
-            width: 300px;
-            background-color: white;
-            z-index: 1055;
-            border-left: 2px solid #f1f1f1;
-            padding: 20px;
-            box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .menu-popup h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .menu-popup .menu-item {
-            text-align: center;
-            font-size: 1.1rem;
-            margin: 15px 0;
-            cursor: pointer;
-            font-weight: 600;
-            color: #D13222;
-        }
-
-        .menu-popup .menu-item:hover {
-            color: #b02a1f;
-        }
-
-        .menu-popup .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1.5rem;
-            color: #D13222;
-            cursor: pointer;
-        }
     </style>
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("menuPopup");
-            menu.style.display = menu.style.display === "block" ? "none" : "block";
-        }
-    </script>
+    
 </head>
 <body>
 
 <!-- Navbar Section -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <!-- Brand/Logo -->
-        <a class="navbar-brand" href="#">M K A N A K</a>
+<?php
+    require 'inc/header.php';
+    ?>
 
-        <!-- Location Selector -->
-        <div class="d-flex align-items-center mx-3">
-            <span class="location-box">Cairo, Egypt</span>
-        </div>
-
-        <!-- Search Bar -->
-        <div class="d-flex align-items-center ms-auto">
-            <form class="d-flex me-3" role="search">
-                <input class="form-control search-box" type="search" placeholder="What are you looking for?" aria-label="Search">
-            </form>
-
-            <!-- Menu Button -->
-            <button class="navbar-toggler border-0" type="button" onclick="toggleMenu()">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </div>
-</nav>
-
-<!-- Menu Popup -->
-<div class="menu-popup" id="menuPopup">
-    <span class="close-btn" onclick="toggleMenu()">&times;</span>
-    <h1>Menu</h1>
-    <div class="menu-item">My Profile</div>
-    <div class="menu-item">Explore Properties</div>
-    <div class="menu-item">Find Agent</div>
-    <div class="menu-item">Logout</div>
-</div>
-
+    
 <!-- Contact Section -->
 <div class="container contact-container">
     <div class="row">
@@ -241,6 +142,9 @@
         </div>
     </div>
 </div>
+<?php
+    require 'inc/footer.php';
+    ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
