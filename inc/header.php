@@ -29,7 +29,10 @@
                     <a class="nav-link me-3" href="contact.php" style="color: white; transition: color 0.3s;"
                         onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">Contact Us</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link me-3" href="main_profile.php" style="color: white; transition: color 0.3s;"
+                        onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">My profile</a>
+                </li>
             </ul>
 
 
