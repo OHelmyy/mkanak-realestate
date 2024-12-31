@@ -55,11 +55,11 @@
                 <img src="images/carousel/IMG_62045.png" class="w-100 d-block carousel-img">
             </div>
             <div class="swiper-slide">
-                <img src="images/carousel/IMG_55677.png class="w-100 d-block carousel-img">
+                <img src="images/carousel/IMG_55677.png" class="w-100 d-block carousel-img">
             </div> <div class="swiper-slide">
-                <img src="images/carousel/IMG_93127.png class="w-100 d-block carousel-img">
+                <img src="images/carousel/IMG_93127.png" class="w-100 d-block carousel-img">
             </div> <div class="swiper-slide">
-                <img src="images/carousel/IMG_99736.png class="w-100 d-block carousel-img">
+                <img src="images/carousel/IMG_99736.png" class="w-100 d-block carousel-img">
             </div>
         </div>
     </div>
