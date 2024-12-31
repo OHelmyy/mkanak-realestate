@@ -113,3 +113,22 @@ form .submit-btn {
 form .submit-btn:hover {
     background-color: #e0464e;
 }
+
+header {
+    text-align: center;
+    margin:0;
+    background-color: #D13222; 
+    color: white;
+    padding: 15px 0; 
+    font-size: 2rem; 
+    font-weight: bold; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    position: relative;     
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+
+

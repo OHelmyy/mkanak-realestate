@@ -20,7 +20,8 @@ $result = $con->query($sql);
 </head>
 
 <header>
-    <?php require('inc/header.php'); ?>
+<a href="Agencylist.php"><img src="images/icons/goback.png" alt="Go Back" class="header-img"></a>
+    <h1>View Your Properties</h1>
 </header>
 <body>
 <div class="table-container">

@@ -20,14 +20,16 @@ if (!$con) {
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/Agencylist.css">
 </head>
+<header>
+
+    <h1>List Your Property</h1>
+</header>
 <body class="bg-light">
 
 
 
     <body> 
-        <header>
-        <?php require('inc/header.php'); ?>
-        </header>
+        
         <main class="main-container">
         
         <div class="left-section">
